@@ -52,7 +52,7 @@ dictionary = [val for sublist in dictionary for val in sublist]
 dictionary = [item.lower() for item in dictionary]
 
 
-#Translation
+#Translation ....
 
 translated = []
 for row in csv["Improvement comment"]:
