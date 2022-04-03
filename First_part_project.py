@@ -1,10 +1,10 @@
 # installing packages
 
-%pip install pandas
-%pip install deep-translator
-%pip install google_trans_new 
-%pip install google-cloud-translate==2.0.1
-%pip install trrex
+# %pip install pandas
+# %pip install deep-translator
+# %pip install google_trans_new
+# %pip install google-cloud-translate==2.0.1
+# %pip install trrex
 
 
 #Importing libraries
@@ -46,7 +46,7 @@ csv["Improvement comment"] = csv["Improvement comment"].fillna('').astype(str).s
 dictionary = pd.read_csv ('/Users/cindy/Documents/Text mining project/NPS_NLP categories.csv', on_bad_lines='skip', delimiter = ',')
 dictionary = dictionary.fillna(method='ffill')
 dictionary = dictionary.values.tolist()
-dictionary  = [val for sublist in dictionary for val in sublist]
+dictionary = [val for sublist in dictionary for val in sublist]
 dictionary = [item.lower() for item in dictionary]
 
 
