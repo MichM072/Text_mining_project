@@ -7,6 +7,7 @@
 # %pip install google_trans_new
 # %pip install google-cloud-translate==2.0.1
 # %pip install trrex
+# %pip install vaderSentiment
 
 
 #Importing libraries
@@ -66,6 +67,21 @@ csv["Improvement comment"]=translated
 csv_2 = csv
 
 csv = csv_2
+
+#Sentiment analysis
+
+from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
+analyzer = SentimentIntensityAnalyzer()
+csv['compound'] = [analyzer.polarity_scores(x)['compound'] for x in         
+csv["Improvement comment"]]
+csv['neg'] = [analyzer.polarity_scores(x)['neg'] for x in         
+csv["Improvement comment"]]
+csv['neu'] = [analyzer.polarity_scores(x)['neu'] for x in         
+csv["Improvement comment"]]
+csv['pos'] = [analyzer.polarity_scores(x)['pos'] for x in         
+csv["Improvement comment"]]
+
+csv
 
 import nltk
 nltk.download('punkt')
